@@ -65,7 +65,7 @@ elseif convdir == 3
         i=i+1;
         nmat = nmat +matrix(i*3);
         if i ~= mszf
-            if round(i/str2double(mdim(1))) == i/str2double(mdim(1))
+            if round(i/str2double(mdim(3))) == i/str2double(mdim(3))
                 nmat = nmat + "][";
             else
                 nmat =nmat + ",";
