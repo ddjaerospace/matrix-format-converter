@@ -1,8 +1,15 @@
 % ti nspire matrix to pearson matrix
 % or vice versa
-convdir = input("ti -> pear (1), pear -> ti (2), pear copy to ti (3), ti -> matlab (4), or matlab -> ti? (5) ");
+convdir = input("ti -> pear (1), pear -> ti (2), pear copy to ti (3), ti -> matlab (4),\nor matlab -> ti? (5) You can string conversions with commas.","s");
+convdirmat = split(convdir,",");
+cdml = length(convdirmat);
+SirIteratorOfTheKingdomOfMATLAB = 1;
+while SirIteratorOfTheKingdomOfMATLAB <= cdml
+convdir = str2double(convdirmat(SirIteratorOfTheKingdomOfMATLAB));
 if convdir == 1
-    matrix = input ("matrix text", "s");
+    if SirIteratorOfTheKingdomOfMATLAB == 1
+        matrix = input ("matrix text", "s");
+    end
     matrix = string(matrix);
     matrix = append("@MATX",matrix);
     matrix = replace(matrix,"][","};{");
@@ -15,11 +22,13 @@ if convdir == 1
     matrix = replace(matrix,")/(",";");
     disp(matrix)
 elseif convdir == 2
-    matrix = input ("matrix text", "s");
+    if SirIteratorOfTheKingdomOfMATLAB == 1
+        matrix = input ("matrix text", "s");
+    end
     matrix = string(matrix);
     matrix = replace(matrix,"-@DIV{","@DIV{-");
     mar = split(matrix,"@DIV{");
-    msz = size(mar,1)
+    msz = size(mar,1);
     i=0;
     while i < msz
         i=i+1;
@@ -47,7 +56,9 @@ elseif convdir == 2
     matrix = replace(matrix,";",",");
     disp(matrix)
 elseif convdir == 3
-    matrix = input ("matrix text", "s");
+    if SirIteratorOfTheKingdomOfMATLAB == 1
+        matrix = input ("matrix text", "s");
+    end
     matrix = string(matrix);
     matrix = replace(matrix,"left bracket","");
     matrix = replace(matrix,"right bracket","");
@@ -80,17 +91,21 @@ elseif convdir == 3
     matrix = nmat;
     disp(matrix)
 elseif convdir == 4
-    matrix = input ("matrix text", "s");
+    if SirIteratorOfTheKingdomOfMATLAB == 1
+        matrix = input ("matrix text", "s");
+    end
     matrix = string(matrix);
     matrix = replace(matrix,"][",";");
     matrix = replace(matrix,"]]","]");
     matrix = replace(matrix,"[[","[");
-    eval(matrix)
+    matrix = eval(matrix)
 elseif convdir == 5
-    matrix = input ("matrix variable");
+    if SirIteratorOfTheKingdomOfMATLAB == 1
+        matrix = input ("matrix variable");
+    end
     matrix = string(matrix);
     tmat = matrix';
-    mszf = size(matrix,1)*size(matrix,2)
+    mszf = size(matrix,1)*size(matrix,2);
     i=0;
     nmat="[[";
     while i<mszf
@@ -109,4 +124,6 @@ elseif convdir == 5
     disp(matrix)
 else
     disp("i said 1, 2, 3, 4, or 5 dummy")
+end
+    SirIteratorOfTheKingdomOfMATLAB=SirIteratorOfTheKingdomOfMATLAB+1;
 end
