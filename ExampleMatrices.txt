@@ -10,3 +10,8 @@ Aria-label Matrix
 
 Start 5 By 5 Table 1st Row 1st Column 1 2nd Column 3 3rd Column 2 4st Column 0 5st Column negative 5 2nd Row 1st Column 0 2nd Column 2 3rd Column 3 4st Column 2 5st Column 6 3rd Row 1st Column negative 2 2nd Column negative 6 3rd Column negative 4 4st Column 2 5st Column 7 4st Row 1st Column 1 2nd Column 1 3rd Column negative 8 4st Column negative 8 5st Column 0 5st Row 1st Column 0 2nd Column 2 3rd Column 3 4st Column 4 5st Column negative 6 EndTable
 
+Conversion chain example
+
+3,1,2,4,5
+
+will convert from pearson copy/aria label to TI to pearson and back to ti then matlab and finally back to TI. A bit of an exaggerated example but it shows that it works.
