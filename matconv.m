@@ -102,7 +102,6 @@ elseif convdir == 4
     matrix = replace(matrix,"]]","]");
     matrix = replace(matrix,"[[","[");
     matrix = eval(matrix)
-    clipboard("copy",matrix);
 elseif convdir == 5
     if SirIteratorOfTheKingdomOfMATLAB == 1
         matrix = input ("matrix variable");
@@ -126,6 +125,7 @@ elseif convdir == 5
     nmat = nmat + "]]";
     matrix = nmat;
     disp(matrix)
+    clipboard("copy",matrix);
 else
     disp("i said 1, 2, 3, 4, or 5 dummy")
 end
