@@ -1,6 +1,6 @@
 % ti nspire matrix to pearson matrix
 % or vice versa
-convdir = input("ti -> pear (1), pear -> ti (2), pear copy to ti (3), ti -> matlab (4),\nor matlab -> ti? (5) You can string conversions with commas.","s");
+convdir = input("\n1) ti -> pear\n2) pear -> ti\n3) pear copy to ti\n4) ti -> matlab\n5) matlab -> ti\n\nYou can string conversions with commas.","s");
 convdirmat = split(convdir,",");
 cdml = length(convdirmat);
 SirIteratorOfTheKingdomOfMATLAB = 1;
@@ -21,6 +21,7 @@ if convdir == 1
     matrix = replace(matrix,"))","}");
     matrix = replace(matrix,")/(",";");
     disp(matrix)
+    clipboard("copy",matrix);
 elseif convdir == 2
     if SirIteratorOfTheKingdomOfMATLAB == 1
         matrix = input ("matrix text", "s");
@@ -55,6 +56,7 @@ elseif convdir == 2
     matrix = replace(matrix,"}","]");
     matrix = replace(matrix,";",",");
     disp(matrix)
+    clipboard("copy",matrix);
 elseif convdir == 3
     if SirIteratorOfTheKingdomOfMATLAB == 1
         matrix = input ("matrix text", "s");
@@ -90,6 +92,7 @@ elseif convdir == 3
     nmat = nmat + "]]";
     matrix = nmat;
     disp(matrix)
+    clipboard("copy",matrix);
 elseif convdir == 4
     if SirIteratorOfTheKingdomOfMATLAB == 1
         matrix = input ("matrix text", "s");
@@ -99,6 +102,7 @@ elseif convdir == 4
     matrix = replace(matrix,"]]","]");
     matrix = replace(matrix,"[[","[");
     matrix = eval(matrix)
+    clipboard("copy",matrix);
 elseif convdir == 5
     if SirIteratorOfTheKingdomOfMATLAB == 1
         matrix = input ("matrix variable");
